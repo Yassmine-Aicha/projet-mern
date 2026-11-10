@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-app.use(cors(process.env.CLIENT_URL ? { origin: process.env.CLIENT_URL } : {}));
+app.use(cors({ origin: ['http://localhost:5173', 'https://projet-mern-psi.vercel.app']}));
 app.use(express.json());
 
 app.get('/', (req, res) => res.json({ message: 'API opérationnelle' }));
